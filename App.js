@@ -10,10 +10,7 @@ app.use('/',(req, res, next) => {
     next()
 })
 
-app.use((req, res, next) => {
-    console.log('second middleware')
-    res.send('<h1>Hello from Express</h1>')
-})
+
 
 //creates the server and passes itself
 app.listen(3000);
