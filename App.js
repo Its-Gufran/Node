@@ -5,7 +5,7 @@ const adminRoutes = require('./routes/Admin')
 const shopRoutes = require("./routes/Shop")
 const app = express();
 app.use(bodyParser.urlencoded({extended: false}))
-
+app.use(express.static(path.join(__dirname, 'public')))
 //middleware
 //next is used to go to next middleware
 //use allows us to add middleware functions
