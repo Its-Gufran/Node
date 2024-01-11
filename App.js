@@ -8,10 +8,7 @@ app.set('view engine', 'pug');
 app.set('views','views')
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
-//middleware
-//next is used to go to next middleware
-//use allows us to add middleware functions
-//next is used to go to next middleware
+
 
 app.use("/admin", adminData.routes);
 app.use(shopRoutes);
