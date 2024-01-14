@@ -6,8 +6,8 @@ const router = express.Router();
 const products = []
 
 router.get("/add-product", (req, res, next) => {
-    res.sendFile(path.join(rootDir, 'Views', 'add-product.html')
-    );
+        res.render('add-product', {pageTitle: 'Add Product'})
+    
   });
   
   //Now this middleware will run only in cases of post request and similarly we can make it for only get requests
