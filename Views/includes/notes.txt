@@ -1,0 +1,1 @@
+EJS doesn't have layouts but we can do that using partials
