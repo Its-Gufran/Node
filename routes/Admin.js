@@ -1,22 +1,13 @@
-const express = require("express")
-const path = require("path")
-const rootDir =require('../utils/path')
+const express = require("express");
+const path = require("path");
+const productsController = require("../constrollers/products");
+
 const router = express.Router();
 
-const products = []
+router.get("/add-product", productsController.getAddProduct);
 
-router.get("/add-product", (req, res, next) => {
-        res.render('add-product', {pageTitle: 'Add Product', path: '/admin/add-product'})
-    
-  });
-  
-  //Now this middleware will run only in cases of post request and similarly we can make it for only get requests
-  //name of the two routes can be same if the method is different
-  router.post("/add-product", (req, res, next) => {
-    products.push({title: req.body.title})
-    res.redirect("/");
-  });
+//Now this middleware will run only in cases of post request and similarly we can make it for only get requests
+//name of the two routes can be same if the method is different
+router.post("/add-product", productsController.postAddProduct);
 
-
-exports.routes =router;
-exports.products = products;
+module.exports = router;
